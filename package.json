@@ -2,7 +2,7 @@
   "name": "vue-sweetalert-icons",
   "version": "1.0.2",
   "description": "A super simple Vue wrapper for the beautiful SweetAlert status icons",
-  "main": "icon.vue",
+  "main": "src/icon.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
