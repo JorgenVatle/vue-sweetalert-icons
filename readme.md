@@ -11,3 +11,6 @@ npm install --save vue-sweetalert-icons
 - SASS/SCSS preprocessor for Vue
     - Meteor users: [akryum:vue-sass](https://github.com/meteor-vue/vue-meteor/tree/master/packages/vue-sass)
     - Others: [Vue Preprocessor Guide](https://vue-loader.vuejs.org/guide/pre-processors.html)
+    
+#### License
+ISC
