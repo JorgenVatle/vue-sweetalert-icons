@@ -12,5 +12,8 @@ npm install --save vue-sweetalert-icons
     - Meteor users: [akryum:vue-sass](https://github.com/meteor-vue/vue-meteor/tree/master/packages/vue-sass)
     - Others: [Vue Preprocessor Guide](https://vue-loader.vuejs.org/guide/pre-processors.html)
     
+#### Credits
+- [SweetAlert](https://sweetalert.js.org/)
+
 #### License
 ISC
