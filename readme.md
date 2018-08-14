@@ -15,7 +15,7 @@ npm install --save vue-sweetalert-icons
 </template>
 
 <script>
-    import SweetalertIcon from 'vue-sweetalert-icon';
+    import SweetalertIcon from 'vue-sweetalert-icons';
     
     export default {
         components: {SweetalertIcon},
