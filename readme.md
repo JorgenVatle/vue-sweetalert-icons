@@ -6,6 +6,24 @@ A clean and simple Vue wrapper for [SweetAlert](https://sweetalert.js.org/)'s fa
 npm install --save vue-sweetalert-icons
 ```
 
+### Usage
+```vue
+
+<template>
+    <!-- Type can be one of: "success", "warning" and "error" -->
+    <sweetalert-icon type="success"></sweetalert-icon>
+</template>
+
+<script>
+    import SweetalertIcon from 'vue-sweetalert-icon';
+    
+    export default {
+        components: {SweetalertIcon},
+    }
+</script>
+
+```
+
 #### Requirements
 - [Vue 2.0+](https://vuejs.org/)
 - SASS/SCSS preprocessor for Vue
