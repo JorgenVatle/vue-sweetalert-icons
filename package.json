@@ -1,0 +1,24 @@
+{
+  "name": "vue-sweetalert-icons",
+  "version": "1.0.0",
+  "description": "A super simple Vue wrapper for the beautiful SweetAlert status icons",
+  "main": "icon.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JorgenVatle/vue-sweetalert-icons.git"
+  },
+  "keywords": [
+    "vue",
+    "sweetalert",
+    "icons"
+  ],
+  "author": "JorgenVatle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JorgenVatle/vue-sweetalert-icons/issues"
+  },
+  "homepage": "https://github.com/JorgenVatle/vue-sweetalert-icons#readme"
+}
