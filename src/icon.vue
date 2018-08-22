@@ -1,6 +1,6 @@
 <template>
     <div class="sa">
-        <div class="sa-error" v-if="isType('error')">
+        <div class="sa-error" v-if="isIcon('error')">
             <div class="sa-error-x">
                 <div class="sa-error-left"></div>
                 <div class="sa-error-right"></div>
@@ -9,12 +9,12 @@
             <div class="sa-error-fix"></div>
         </div>
 
-        <div class="sa-warning" v-else-if="isType('warning')">
+        <div class="sa-warning" v-else-if="isIcon('warning')">
             <div class="sa-warning-body"></div>
             <div class="sa-warning-dot"></div>
         </div>
 
-        <div class="sa-loading" v-else-if="isType('loading')">
+        <div class="sa-loading" v-else-if="isIcon('loading')">
             <div class="sa-loading-body"></div>
         </div>
 
@@ -33,15 +33,15 @@
         name: 'sweetalert-icon',
 
         props: {
-            type: {
+            icon: {
                 allowedValues: ['success', 'warning', 'error', 'loading'],
                 default: 'success',
             }
         },
 
         methods: {
-            isType(type) {
-                return type === this.type;
+            isIcon(icon) {
+                return icon === this.icon;
             }
         }
     }
