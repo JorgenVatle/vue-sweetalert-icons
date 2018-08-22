@@ -14,6 +14,10 @@
             <div class="sa-warning-dot"></div>
         </div>
 
+        <div class="sa-loading" v-else-if="isType('loading')">
+            <div class="sa-loading-body"></div>
+        </div>
+
         <div class="sa-success" v-else>
             <div class="sa-success-tip"></div>
             <div class="sa-success-long"></div>
@@ -30,7 +34,7 @@
 
         props: {
             type: {
-                allowedValues: ['success', 'warning', 'error'],
+                allowedValues: ['success', 'warning', 'error', 'loading'],
                 default: 'success',
             }
         },
@@ -56,6 +60,22 @@
         height: 140px;
         padding: 26px;
         background-color: #fff;
+
+        /* Loading Icon */
+        &-loading {
+            border-radius: 50%;
+            border: 4px solid rgba(90, 107, 227, 0.22);
+            -webkit-box-sizing: content-box;
+            box-sizing: content-box;
+            height: 80px;
+            left: -4px;
+            position: relative;
+            top: -4px;
+            width: 80px;
+            z-index: 2;
+            border-top: 4px solid #758be2;
+            animation: animateLoadingSpin 0.75s infinite;
+        }
 
         /* Error Icon */
         &-error {
@@ -409,6 +429,14 @@
             right: 16px;
             top: 37px;
             width: 47px;
+        }
+    }
+    @keyframes animateLoadingSpin {
+        0% {
+            transform: rotate(-45deg);
+        }
+        100% {
+            transform: rotate(-405deg);
         }
     }
 
