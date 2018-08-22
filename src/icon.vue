@@ -51,12 +51,151 @@
      * @link https://vuejsfeed.com/blog/codepen-collection-sweetalert-icons-with-animations
     */
 
-    /* Success */
     .sa {
         width: 140px;
         height: 140px;
         padding: 26px;
         background-color: #fff;
+
+        /* Error Icon */
+        &-error {
+            border-radius: 50%;
+            border: 4px solid #F27474;
+            box-sizing: content-box;
+            height: 80px;
+            padding: 0;
+            position: relative;
+            background-color: #fff;
+            width: 80px;
+            animation: animateErrorIcon .5s;
+            &:after, &:before {
+                background: #fff;
+                content: '';
+                height: 120px;
+                position: absolute;
+                transform: rotate(45deg);
+                width: 60px;
+            }
+            &:before {
+                border-radius: 40px 0 0 40px;
+                width: 26px;
+                height: 80px;
+                top: -17px;
+                left: 5px;
+                transform-origin: 60px 60px;
+                transform: rotate(-45deg);
+            }
+            &:after {
+                border-radius: 0 120px 120px 0;
+                left: 30px;
+                top: -11px;
+                transform-origin: 0 60px;
+                transform: rotate(-45deg);
+                animation: rotatePlaceholder 4.25s ease-in;
+            }
+            &-x {
+                display: block;
+                position: relative;
+                z-index: 2;
+            }
+            &-placeholder {
+                border-radius: 50%;
+                border: 4px solid rgba(200, 0, 0, .2);
+                box-sizing: content-box;
+                height: 80px;
+                left: -4px;
+                position: absolute;
+                top: -4px;
+                width: 80px;
+                z-index: 2;
+            }
+            &-fix {
+                background-color: #fff;
+                height: 90px;
+                left: 28px;
+                position: absolute;
+                top: 8px;
+                transform: rotate(-45deg);
+                width: 5px;
+                z-index: 1;
+            }
+            &-left, &-right {
+                border-radius: 2px;
+                display: block;
+                height: 5px;
+                position: absolute;
+                z-index: 2;
+                background-color: #F27474;
+                top: 37px;
+                width: 47px;
+            }
+            &-left {
+                left: 17px;
+                transform: rotate(45deg);
+                animation: animateXLeft .75s;
+            }
+            &-right {
+                right: 16px;
+                transform: rotate(-45deg);
+                animation: animateXRight .75s;
+            }
+        }
+
+        /* Warning Icon */
+        &-warning {
+            border-radius: 50%;
+            border: 4px solid #F8BB86;
+            box-sizing: content-box;
+            height: 80px;
+            padding: 0;
+            position: relative;
+            background-color: #fff;
+            width: 80px;
+            animation: scaleWarning 0.75s infinite alternate;
+            &:after, &:before {
+                background: #fff;
+                content: '';
+                border-radius: 50%;
+                height: 100%;
+                position: absolute;
+                width: 100%;
+            }
+            &:before {
+                display: inline-block;
+                opacity: 0;
+                animation: pulseWarning 2s linear infinite;
+            }
+            &:after {
+                display: block;
+                z-index: 1;
+            }
+            &-body {
+                background-color: #F8BB86;
+                border-radius: 2px;
+                height: 47px;
+                left: 50%;
+                margin-left: -2px;
+                position: absolute;
+                top: 10px;
+                width: 5px;
+                z-index: 2;
+                animation: pulseWarningIns 0.75s infinite alternate;
+            }
+            &-dot {
+                background-color: #F8BB86;
+                border-radius: 50%;
+                bottom: 10px;
+                height: 7px;
+                left: 50%;
+                margin-left: -3px;
+                position: absolute;
+                width: 7px;
+                z-index: 2;
+                animation: pulseWarningIns 0.75s infinite alternate;
+            }
+        }
+
+        /* Success Icon */
         &-success {
             border-radius: 50%;
             border: 4px solid #A5DC86;
@@ -183,65 +322,6 @@
         }
     }
 
-    /* Warning */
-    .sa {
-        width: 140px;
-        height: 140px;
-        padding: 26px;
-        background-color: #fff;
-        &-warning {
-            border-radius: 50%;
-            border: 4px solid #F8BB86;
-            box-sizing: content-box;
-            height: 80px;
-            padding: 0;
-            position: relative;
-            background-color: #fff;
-            width: 80px;
-            animation: scaleWarning 0.75s infinite alternate;
-            &:after, &:before {
-                background: #fff;
-                content: '';
-                border-radius: 50%;
-                height: 100%;
-                position: absolute;
-                width: 100%;
-            }
-            &:before {
-                display: inline-block;
-                opacity: 0;
-                animation: pulseWarning 2s linear infinite;
-            }
-            &:after {
-                display: block;
-                z-index: 1;
-            }
-            &-body {
-                background-color: #F8BB86;
-                border-radius: 2px;
-                height: 47px;
-                left: 50%;
-                margin-left: -2px;
-                position: absolute;
-                top: 10px;
-                width: 5px;
-                z-index: 2;
-                animation: pulseWarningIns 0.75s infinite alternate;
-            }
-            &-dot {
-                background-color: #F8BB86;
-                border-radius: 50%;
-                bottom: 10px;
-                height: 7px;
-                left: 50%;
-                margin-left: -3px;
-                position: absolute;
-                width: 7px;
-                z-index: 2;
-                animation: pulseWarningIns 0.75s infinite alternate;
-            }
-        }
-    }
     @keyframes scaleWarning {
         0% {
             transform: scale(1);
@@ -279,95 +359,6 @@
         }
     }
 
-    /* Error */
-    .sa {
-        width: 140px;
-        height: 140px;
-        padding: 26px;
-        background-color: #fff;
-        &-error {
-            border-radius: 50%;
-            border: 4px solid #F27474;
-            box-sizing: content-box;
-            height: 80px;
-            padding: 0;
-            position: relative;
-            background-color: #fff;
-            width: 80px;
-            animation: animateErrorIcon .5s;
-            &:after, &:before {
-                background: #fff;
-                content: '';
-                height: 120px;
-                position: absolute;
-                transform: rotate(45deg);
-                width: 60px;
-            }
-            &:before {
-                border-radius: 40px 0 0 40px;
-                width: 26px;
-                height: 80px;
-                top: -17px;
-                left: 5px;
-                transform-origin: 60px 60px;
-                transform: rotate(-45deg);
-            }
-            &:after {
-                border-radius: 0 120px 120px 0;
-                left: 30px;
-                top: -11px;
-                transform-origin: 0 60px;
-                transform: rotate(-45deg);
-                animation: rotatePlaceholder 4.25s ease-in;
-            }
-            &-x {
-                display: block;
-                position: relative;
-                z-index: 2;
-            }
-            &-placeholder {
-                border-radius: 50%;
-                border: 4px solid rgba(200, 0, 0, .2);
-                box-sizing: content-box;
-                height: 80px;
-                left: -4px;
-                position: absolute;
-                top: -4px;
-                width: 80px;
-                z-index: 2;
-            }
-            &-fix {
-                background-color: #fff;
-                height: 90px;
-                left: 28px;
-                position: absolute;
-                top: 8px;
-                transform: rotate(-45deg);
-                width: 5px;
-                z-index: 1;
-            }
-            &-left, &-right {
-                border-radius: 2px;
-                display: block;
-                height: 5px;
-                position: absolute;
-                z-index: 2;
-                background-color: #F27474;
-                top: 37px;
-                width: 47px;
-            }
-            &-left {
-                left: 17px;
-                transform: rotate(45deg);
-                animation: animateXLeft .75s;
-            }
-            &-right {
-                right: 16px;
-                transform: rotate(-45deg);
-                animation: animateXRight .75s;
-            }
-        }
-    }
     @keyframes rotatePlaceholder {
         0%, 5% {
             transform: rotate(-45deg);
