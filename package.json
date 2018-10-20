@@ -2,7 +2,12 @@
   "name": "vue-sweetalert-icons",
   "version": "2.1.0",
   "description": "A super simple Vue wrapper for the beautiful SweetAlert status icons",
-  "main": "src/icon.vue",
+  "main": "dist/sweetalert-icon.umd.js",
+  "module": "dist/sweetalert-icon.esm.js",
+  "unpkg": "dist/sweetalert-icon.min.js",
+  "browser": {
+    "./sfc": "src/components/icon.vue"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build:umd && npm run build:es && npm run build:unpkg",
