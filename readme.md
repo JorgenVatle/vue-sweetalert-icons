@@ -11,7 +11,7 @@ npm install --save vue-sweetalert-icons
 
 <template>
     <!-- Type can be one of: "success", "warning" and "error" -->
-    <sweetalert-icon type="success"></sweetalert-icon>
+    <sweetalert-icon icon="success"></sweetalert-icon>
 </template>
 
 <script>
