@@ -14,6 +14,8 @@
     "build:umd": "rollup --config rollup.config.js --format umd --file dist/sweetalert-icon.umd.js",
     "build:es": "rollup --config rollup.config.js --format es --file dist/sweetalert-icon.esm.js",
     "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/sweetalert-icon.min.js",
+    "preversion": "npm run build",
+    "prepublish": "npm run build",
     "postpublish": "git push && git push --tags"
   },
   "repository": {
