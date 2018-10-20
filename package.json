@@ -5,6 +5,10 @@
   "main": "src/icon.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:umd && npm run build:es && npm run build:unpkg",
+    "build:umd": "rollup --config rollup.config.js --format umd --file dist/sweetalert-icon.umd.js",
+    "build:es": "rollup --config rollup.config.js --format es --file dist/sweetalert-icon.esm.js",
+    "build:unpkg": "rollup --config rollup.config.js --format iife --file dist/sweetalert-icon.min.js",
     "postpublish": "git push && git push --tags"
   },
   "repository": {
