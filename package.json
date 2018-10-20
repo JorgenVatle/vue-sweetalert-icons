@@ -4,7 +4,8 @@
   "description": "A super simple Vue wrapper for the beautiful SweetAlert status icons",
   "main": "src/icon.vue",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postpublish": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
