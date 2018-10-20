@@ -59,6 +59,7 @@
         width: 140px;
         height: 140px;
         padding: 26px;
+        margin: auto;
         background-color: #fff;
 
         /* Loading Icon */
