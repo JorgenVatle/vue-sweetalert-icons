@@ -1,4 +1,4 @@
-import Icon from './components/icon';
+import Icon from './components/icon.vue';
 
 export function install(Vue) {
     if (install.installed) return;
