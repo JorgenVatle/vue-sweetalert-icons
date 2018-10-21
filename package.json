@@ -1,6 +1,6 @@
 {
   "name": "vue-sweetalert-icons",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "A super simple Vue wrapper for the beautiful animated SweetAlert status icons",
   "main": "dist/sweetalert-icon.umd.js",
   "module": "dist/sweetalert-icon.esm.js",
