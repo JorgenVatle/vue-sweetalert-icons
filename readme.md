@@ -44,6 +44,7 @@ component/instance instead:
 
 ## Credits
 - [SweetAlert](https://sweetalert.js.org/)
+- [Alexandre Chopin](https://codepen.io/alexchopin/)
 
 ## License
 ISC
