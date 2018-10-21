@@ -25,6 +25,23 @@ Vue.use(SweetAlertIcons);
 </template>
 ```
 
+## Alternative Usage
+If you'd rather not use the package globally, you can import `SweetalertIcon` for use with a single vue
+component/instance:
+```vue
+<template>
+    <sweetalert-icon icon="success"></sweetalert-icon>
+</template>
+
+<script>
+    import { SweetalertIcon } from 'vue-sweetalert-icons';
+
+    export default {
+        components: { SweetalertIcon },
+    }
+</script>
+```
+
 ## Credits
 - [SweetAlert](https://sweetalert.js.org/)
 
