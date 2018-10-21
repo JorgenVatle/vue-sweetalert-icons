@@ -27,7 +27,7 @@ Vue.use(SweetAlertIcons);
 
 ## Alternative Usage
 If you'd rather not use the package globally, you can import `SweetalertIcon` for use with a single vue
-component/instance:
+component/instance instead:
 ```vue
 <template>
     <sweetalert-icon icon="success"></sweetalert-icon>
