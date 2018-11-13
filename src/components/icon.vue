@@ -34,13 +34,18 @@
 </template>
 
 <script>
+    const availableIcons = ['success', 'warning', 'error', 'info', 'loading'];
+
     export default {
         name: 'sweetalert-icon',
 
         props: {
             icon: {
-                allowedValues: ['success', 'warning', 'error', 'info', 'loading'],
+                type: String,
                 default: 'success',
+                validator: (value) => {
+                    return availableIcons.indexOf(value) !== -1;
+                }
             }
         },
 
