@@ -359,6 +359,8 @@
             }
         }
     }
+
+    /* Success keyframes */
     @keyframes animateSuccessTip {
         0%, 54% {
             width: 0;
@@ -407,6 +409,7 @@
         }
     }
 
+    /* Warning keyframes */
     @keyframes scaleWarning {
         0% {
             transform: scale(1);
@@ -444,6 +447,7 @@
         }
     }
 
+    /* Info keyframes */
     @keyframes scaleInfo {
         0% {
             transform: scale(1);
@@ -489,6 +493,8 @@
             transform: rotate(-405deg);
         }
     }
+
+    /* Error icon keyframes */
     @keyframes animateErrorIcon {
         0% {
             transform: rotateX(100deg);
@@ -533,6 +539,8 @@
             width: 47px;
         }
     }
+
+    /* Loading keyframes */
     @keyframes animateLoadingSpin {
         0% {
             transform: rotate(-45deg);
