@@ -14,6 +14,11 @@
             <div class="sa-warning-dot"></div>
         </div>
 
+        <div class="sa-info" v-else-if="isIcon('info')">
+            <div class="sa-info-body"></div>
+            <div class="sa-info-dot"></div>
+        </div>
+
         <div class="sa-loading" v-else-if="isIcon('loading')">
             <div class="sa-loading-body"></div>
         </div>
@@ -34,7 +39,7 @@
 
         props: {
             icon: {
-                allowedValues: ['success', 'warning', 'error', 'loading'],
+                allowedValues: ['success', 'warning', 'error', 'info', 'loading'],
                 default: 'success',
             }
         },
@@ -216,6 +221,60 @@
             }
         }
 
+        /* Info Icon */
+        &-info {
+            border-radius: 50%;
+            border: 4px solid #59bded;
+            box-sizing: content-box;
+            height: 80px;
+            padding: 0;
+            position: relative;
+            background-color: #fff;
+            width: 80px;
+            animation: scaleInfo 0.75s infinite alternate;
+            &:after, &:before {
+                background: #fff;
+                content: '';
+                border-radius: 50%;
+                height: 100%;
+                position: absolute;
+                width: 100%;
+            }
+            &:before {
+                display: inline-block;
+                opacity: 0;
+                animation: pulseInfo 2s linear infinite;
+            }
+            &:after {
+                display: block;
+                z-index: 1;
+            }
+            &-body {
+                background-color: #59bded;
+                border-radius: 2px;
+                height: 47px;
+                left: 50%;
+                margin-left: -2px;
+                position: absolute;
+                top: 10px;
+                width: 5px;
+                z-index: 2;
+                animation: pulseInfogIns 0.75s infinite alternate;
+            }
+            &-dot {
+                background-color: #59bded;
+                border-radius: 50%;
+                bottom: 10px;
+                height: 7px;
+                left: 50%;
+                margin-left: -3px;
+                position: absolute;
+                width: 7px;
+                z-index: 2;
+                animation: pulseInfoIns 0.75s infinite alternate;
+            }
+        }
+
         /* Success Icon */
         &-success {
             border-radius: 50%;
@@ -377,6 +436,43 @@
         }
         100% {
             background-color: #F8BB86;
+        }
+    }
+
+    @keyframes scaleInfo {
+        0% {
+            transform: scale(1);
+        }
+        30% {
+            transform: scale(1.02);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+    @keyframes pulseInfo {
+        0% {
+            background-color: #fff;
+            transform: scale(1);
+            opacity: 0.5;
+        }
+        30% {
+            background-color: #fff;
+            transform: scale(1);
+            opacity: 0.5;
+        }
+        100% {
+            background-color: #59bded;
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+    @keyframes pulseInfoIns {
+        0% {
+            background-color: #59bded;
+        }
+        100% {
+            background-color: #59bded;
         }
     }
 
