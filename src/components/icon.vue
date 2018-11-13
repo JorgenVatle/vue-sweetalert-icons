@@ -485,15 +485,6 @@
         }
     }
 
-    @keyframes rotatePlaceholder {
-        0%, 5% {
-            transform: rotate(-45deg);
-        }
-        100%,12% {
-            transform: rotate(-405deg);
-        }
-    }
-
     /* Error icon keyframes */
     @keyframes animateErrorIcon {
         0% {
