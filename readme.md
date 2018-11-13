@@ -20,7 +20,7 @@ Vue.use(SweetAlertIcons);
 ## Use
 ```vue
 <template>
-    <!-- Type can be one of: "success", "warning", "error" and "loading" -->
+    <!-- Type can be one of: "success", "warning", "info", "error" and "loading" -->
     <sweetalert-icon icon="success"></sweetalert-icon>
 </template>
 ```
