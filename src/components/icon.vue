@@ -264,7 +264,7 @@
                 top: 10px;
                 width: 5px;
                 z-index: 2;
-                animation: pulseInfogIns 0.75s infinite alternate;
+                animation: pulseInfoIns 0.75s infinite alternate;
             }
             &-dot {
                 background-color: #59bded;
