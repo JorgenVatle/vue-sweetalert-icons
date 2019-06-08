@@ -5,6 +5,9 @@
   "main": "dist/sweetalert-icon.ssr.js",
   "module": "dist/sweetalert-icon.esm.js",
   "unpkg": "dist/sweetalert-icon.min.js",
+  "browser": {
+    "./sfc": "src/components/icon.vue"
+  },
   "files": [
     "dist/*",
     "src/**/*.vue"
