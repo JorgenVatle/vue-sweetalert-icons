@@ -76,7 +76,6 @@
         &-loading {
             border-radius: 50%;
             border: 4px solid rgba(90, 107, 227, 0.22);
-            -webkit-box-sizing: content-box;
             box-sizing: content-box;
             height: 80px;
             left: -4px;
