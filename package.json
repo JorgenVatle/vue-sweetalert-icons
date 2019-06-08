@@ -2,25 +2,23 @@
   "name": "vue-sweetalert-icons",
   "version": "3.2.1",
   "description": "A super simple Vue wrapper for the beautiful animated SweetAlert status icons",
-  "main": "dist/sweetalert-icon.common.js",
-  "unpkg": "dist/sweetalert-icon.umd.js",
-  "browser": {
-    "./sfc": "src/components/icon.vue"
-  },
+  "main": "dist/sweetalert-icon.ssr.js",
+  "module": "dist/sweetalert-icon.esm.js",
+  "unpkg": "dist/sweetalert-icon.min.js",
+  "files": [
+    "dist/*",
+    "src/**/*.vue"
+  ],
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib ./src/components/icon.vue --name SweetalertIcon"
+    "build": "cross-env NODE_ENV=production rollup --config ./build/rollup.config.js",
+    "build:ssr": "cross-env NODE_ENV=production rollup --config ./build/rollup.config.js --format cjs",
+    "build:es": "cross-env NODE_ENV=production rollup --config ./build/rollup.config.js --format es",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config ./build/rollup.config.js --format iife"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JorgenVatle/vue-sweetalert-icons.git"
   },
-  "files": [
-    "dist/*",
-    "src/*",
-    "*.json",
-    "*.js"
-  ],
   "keywords": [
     "vue",
     "sweetalert",
@@ -33,21 +31,19 @@
     "url": "https://github.com/JorgenVatle/vue-sweetalert-icons/issues"
   },
   "homepage": "https://github.com/JorgenVatle/vue-sweetalert-icons#readme",
-  "dependencies": {
-    "core-js": "^2.6.5",
-    "vue": "^2.6.10"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.8.0",
-    "@vue/cli-plugin-typescript": "^3.8.0",
-    "@vue/cli-service": "^3.8.0",
-    "bili": "^4.8.0",
-    "bili-typescript": "^0.1.0",
+    "minimist": "^1.2.0",
     "node-sass": "^4.12.0",
+    "rollup": "^1.12.1",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-commonjs": "^10.0.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-terser": "^4.0.4",
     "rollup-plugin-typescript2": "^0.21.1",
     "rollup-plugin-vue": "^5.0.0",
     "sass-loader": "^7.1.0",
-    "typescript": "^3.4.3",
+    "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   }
 }
