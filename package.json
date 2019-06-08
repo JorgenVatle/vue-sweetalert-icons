@@ -16,6 +16,12 @@
     "type": "git",
     "url": "git+https://github.com/JorgenVatle/vue-sweetalert-icons.git"
   },
+  "files": [
+    "dist/*",
+    "src/*",
+    "*.json",
+    "*.js"
+  ],
   "keywords": [
     "vue",
     "sweetalert",
