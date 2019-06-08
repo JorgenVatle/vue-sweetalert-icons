@@ -30,7 +30,7 @@
   "homepage": "https://github.com/JorgenVatle/vue-sweetalert-icons#readme",
   "dependencies": {
     "core-js": "^2.6.5",
-    "vue": "^2.6.10",
+    "vue": "^2.6.10"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.8.0",
