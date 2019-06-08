@@ -34,7 +34,7 @@ component/instance instead:
 </template>
 
 <script>
-    import { SweetalertIcon } from 'vue-sweetalert-icons';
+    import SweetalertIcon from 'vue-sweetalert-icons';
 
     export default {
         components: { SweetalertIcon },
