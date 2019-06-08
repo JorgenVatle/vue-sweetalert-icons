@@ -4,7 +4,6 @@ import Buble from 'rollup-plugin-buble';
 import CommonJs from 'rollup-plugin-commonjs';
 import Replace from 'rollup-plugin-replace';
 import Minimist from 'minimist';
-import PostCSS from 'rollup-plugin-postcss';
 import Autoprefixer from 'autoprefixer';
 import { terser } from 'rollup-plugin-terser';
 
@@ -18,15 +17,16 @@ const baseConfig = {
                 'process.env.NODE_ENV': JSON.stringify('production'),
             }),
             CommonJs(),
-            PostCSS({
-                plugins: [Autoprefixer]
-            }),
         ],
         vue: {
             css: true,
+            style: {
+                postcssPlugins: [Autoprefixer()]
+            },
             template: {
                 isProduction: true,
             },
+
         },
         postVue: [
             Buble(),
