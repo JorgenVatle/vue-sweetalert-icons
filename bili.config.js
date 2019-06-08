@@ -1,4 +1,5 @@
 module.exports = {
+    jsCompiler: 'typescript',
     banner: true,
     output: {
         extractCSS: false,
