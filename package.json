@@ -16,7 +16,10 @@
     "build": "cross-env NODE_ENV=production rollup --config ./build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config ./build/rollup.config.js --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup --config ./build/rollup.config.js --format es",
-    "build:unpkg": "cross-env NODE_ENV=production rollup --config ./build/rollup.config.js --format iife"
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config ./build/rollup.config.js --format iife",
+    "preversion": "npm run build",
+    "prepublish": "npm run build",
+    "postpublish": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
