@@ -16,6 +16,7 @@ import SweetAlertIcons from 'vue-sweetalert-icons';
 
 Vue.use(SweetAlertIcons);
 ```
+If you're using Nuxt, you need to import the package source. [(read more)](#usage-with-nuxt)
 
 ## Use
 ```vue
@@ -43,12 +44,11 @@ component/instance instead:
 ```
 
 ## Usage with Nuxt
-Due to an issue with the way styles are injected into Nuxt, please wrap `<sweetalert-icon />` around 
-[`<no-ssr>`](https://nuxtjs.org/api/components-no-ssr/) tags.
-```vue
-<no-ssr>
-    <sweetalert-icon icon="info" />
-</no-ssr>
+Import the package source directly to give Nuxt control over package buildup:
+```js
+import VueSweetalertIcons from 'vue-sweetalert-icons/src/entry';
+
+Vue.use(VueSweetalertIcons);
 ```
 
 ## Credits
