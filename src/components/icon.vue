@@ -70,7 +70,6 @@
         height: 140px;
         padding: 26px;
         margin: auto;
-        background-color: #fff;
 
         /* Loading Icon */
         &-loading {
@@ -95,11 +94,9 @@
             height: 80px;
             padding: 0;
             position: relative;
-            background-color: #fff;
             width: 80px;
             animation: animateErrorIcon .5s;
             &:after, &:before {
-                background: #fff;
                 content: '';
                 height: 120px;
                 position: absolute;
@@ -140,7 +137,6 @@
                 z-index: 2;
             }
             &-fix {
-                background-color: #fff;
                 height: 90px;
                 left: 28px;
                 position: absolute;
@@ -179,11 +175,9 @@
             height: 80px;
             padding: 0;
             position: relative;
-            background-color: #fff;
             width: 80px;
             animation: scaleWarning 0.75s infinite alternate;
             &:after, &:before {
-                background: #fff;
                 content: '';
                 border-radius: 50%;
                 height: 100%;
@@ -233,11 +227,9 @@
             height: 80px;
             padding: 0;
             position: relative;
-            background-color: #fff;
             width: 80px;
             animation: scaleInfo 0.75s infinite alternate;
             &:after, &:before {
-                background: #fff;
                 content: '';
                 border-radius: 50%;
                 height: 100%;
@@ -287,10 +279,8 @@
             height: 80px;
             padding: 0;
             position: relative;
-            background-color: #fff;
             width: 80px;
             &:after, &:before {
-                background: #fff;
                 content: '';
                 height: 120px;
                 position: absolute;
@@ -326,7 +316,6 @@
                 z-index: 2;
             }
             &-fix {
-                background-color: #fff;
                 height: 90px;
                 left: 28px;
                 position: absolute;
@@ -422,12 +411,10 @@
     }
     @keyframes pulseWarning {
         0% {
-            background-color: #fff;
             transform: scale(1);
             opacity: 0.5;
         }
         30% {
-            background-color: #fff;
             transform: scale(1);
             opacity: 0.5;
         }
@@ -460,12 +447,10 @@
     }
     @keyframes pulseInfo {
         0% {
-            background-color: #fff;
             transform: scale(1);
             opacity: 0.5;
         }
         30% {
-            background-color: #fff;
             transform: scale(1);
             opacity: 0.5;
         }

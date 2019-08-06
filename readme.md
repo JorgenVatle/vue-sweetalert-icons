@@ -16,12 +16,13 @@ import SweetAlertIcons from 'vue-sweetalert-icons';
 
 Vue.use(SweetAlertIcons);
 ```
+If you're using Nuxt, you might need additional steps [(read more)](#usage-with-nuxt)
 
 ## Use
 ```vue
 <template>
     <!-- Icon can be one of: "success", "warning", "info", "error" and "loading" -->
-    <sweetalert-icon icon="success"></sweetalert-icon>
+    <sweetalert-icon icon="success" />
 </template>
 ```
 
@@ -34,13 +35,21 @@ component/instance instead:
 </template>
 
 <script>
-    import { SweetalertIcon } from 'vue-sweetalert-icons';
+    import SweetalertIcon from 'vue-sweetalert-icons';
 
     export default {
         components: { SweetalertIcon },
     }
 </script>
 ```
+
+## Usage with Nuxt
+Due to an issue with the way styles are injected into Nuxt, please wrap `<sweetalert-icon />` around 
+[`<no-ssr>`](https://nuxtjs.org/api/components-no-ssr/) tags.
+```vue
+<no-ssr>
+    <sweetalert-icon icon="info" />
+</no-ssr>
 
 ## Credits
 - [SweetAlert](https://sweetalert.js.org/)
