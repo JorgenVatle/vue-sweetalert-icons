@@ -50,6 +50,7 @@ Due to an issue with the way styles are injected into Nuxt, please wrap `<sweeta
 <no-ssr>
     <sweetalert-icon icon="info" />
 </no-ssr>
+```
 
 ## Credits
 - [SweetAlert](https://sweetalert.js.org/)
