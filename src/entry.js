@@ -23,3 +23,4 @@ if (GlobalVue) {
 SweetalertIcon.install = install;
 
 export default SweetalertIcon;
+export { SweetalertIcon };
