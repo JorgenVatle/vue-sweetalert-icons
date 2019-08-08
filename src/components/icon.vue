@@ -64,16 +64,19 @@
      * @link https://sweetalert.js.org/
      * @link https://vuejsfeed.com/blog/codepen-collection-sweetalert-icons-with-animations
     */
+
+    body {
+        // Background used as an overlay for certain animations.
+        // Should be set to the same colour as the background of your containing element.
+        // If unsure, leave as transparent.
+        --sweetalert-icons-animation-background: transparent;
+    }
+
     .sa {
         width: 140px;
         height: 140px;
         padding: 26px;
         margin: auto;
-
-        // Background used as an overlay for certain animations.
-        // Should be set to the same colour as the background of your containing element.
-        // If unsure, leave as transparent.
-        --animation-background: transparent;
 
         /* Loading Icon */
         &-loading {
@@ -284,9 +287,9 @@
             padding: 0;
             position: relative;
             width: 80px;
-            background-color: var(--animation-background);
+            background-color: var(--sweetalert-icons-animation-background);
             &:after, &:before {
-                background-color: var(--animation-background);
+                background-color: var(--sweetalert-icons-animation-background);
                 content: '';
                 height: 120px;
                 position: absolute;
@@ -322,7 +325,7 @@
                 z-index: 2;
             }
             &-fix {
-                background-color: var(--animation-background);
+                background-color: var(--sweetalert-icons-animation-background);
                 height: 90px;
                 left: 28px;
                 position: absolute;
