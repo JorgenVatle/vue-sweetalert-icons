@@ -40,7 +40,8 @@
     "homepage": "https://github.com/JorgenVatle/vue-sweetalert-icons#readme",
     "dependencies": {
         "node-sass": "^4.12.0",
-        "sass-loader": "^7.1.0"
+        "sass-loader": "^7.1.0",
+        "validate-color": "^2.1.0"
     },
     "devDependencies": {
         "acorn": "^6.1.1",
