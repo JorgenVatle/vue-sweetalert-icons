@@ -1,5 +1,5 @@
 <template>
-    <div class="sa">
+    <div class="sa" :style="cssVars">
         <div class="sa-error" v-if="isIcon('error')">
             <div class="sa-error-x">
                 <div class="sa-error-left"></div>
@@ -34,7 +34,16 @@
 </template>
 
 <script>
+    import validateColor from "validate-color";
+    import convertColor from "color";
     const availableIcons = ['success', 'warning', 'error', 'info', 'loading'];
+    const iconColors = {
+        success: "#A5DC86",
+        warning: "#F8BB86",
+        error: "#F27474",
+        info: "#59BDED",
+        loading: "#758BE2"
+    };
 
     export default {
         name: 'sweetalert-icon',
@@ -46,6 +55,22 @@
                 validator: (value) => {
                     return availableIcons.indexOf(value) !== -1;
                 }
+            },
+            color: {
+                type: String,
+                validator: validateColor
+            }
+        },
+
+        computed: {
+            cssVars() {
+                const outputColor = validateColor(this.color) 
+                        ? this.color 
+                        : iconColors[this.icon];
+                return {
+                    "--icon-color": outputColor,
+                    "--icon-color-alpha": convertColor(outputColor).alpha(0.25)
+                };
             }
         },
 
@@ -65,6 +90,8 @@
      * @link https://vuejsfeed.com/blog/codepen-collection-sweetalert-icons-with-animations
     */
 
+    $icon-color: var(--icon-color);
+    $icon-color-alpha: var(--icon-color-alpha);
     body {
         // Background used as an overlay for certain animations.
         // Should be set to the same colour as the background of your containing element.
@@ -81,7 +108,7 @@
         /* Loading Icon */
         &-loading {
             border-radius: 50%;
-            border: 4px solid rgba(90, 107, 227, 0.22);
+            border: 4px solid $icon-color-alpha;
             box-sizing: content-box;
             height: 80px;
             left: -4px;
@@ -89,14 +116,14 @@
             top: -4px;
             width: 80px;
             z-index: 2;
-            border-top: 4px solid #758be2;
+            border-top: 4px solid $icon-color;
             animation: animateLoadingSpin 0.75s infinite;
         }
 
         /* Error Icon */
         &-error {
             border-radius: 50%;
-            border: 4px solid #F27474;
+            border: 4px solid $icon-color;
             box-sizing: content-box;
             height: 80px;
             padding: 0;
@@ -134,7 +161,7 @@
             }
             &-placeholder {
                 border-radius: 50%;
-                border: 4px solid rgba(200, 0, 0, .2);
+                border: 4px solid $icon-color-alpha;
                 box-sizing: content-box;
                 height: 80px;
                 left: -4px;
@@ -158,7 +185,7 @@
                 height: 5px;
                 position: absolute;
                 z-index: 2;
-                background-color: #F27474;
+                background-color: $icon-color;
                 top: 37px;
                 width: 47px;
             }
@@ -177,7 +204,7 @@
         /* Warning Icon */
         &-warning {
             border-radius: 50%;
-            border: 4px solid #F8BB86;
+            border: 4px solid $icon-color;
             box-sizing: content-box;
             height: 80px;
             padding: 0;
@@ -201,7 +228,7 @@
                 z-index: 1;
             }
             &-body {
-                background-color: #F8BB86;
+                background-color: $icon-color;
                 border-radius: 2px;
                 height: 47px;
                 left: 50%;
@@ -213,7 +240,7 @@
                 animation: pulseWarningIns 0.75s infinite alternate;
             }
             &-dot {
-                background-color: #F8BB86;
+                background-color: $icon-color;
                 border-radius: 50%;
                 bottom: 10px;
                 height: 7px;
@@ -229,7 +256,7 @@
         /* Info Icon */
         &-info {
             border-radius: 50%;
-            border: 4px solid #59bded;
+            border: 4px solid $icon-color;
             box-sizing: content-box;
             height: 80px;
             padding: 0;
@@ -253,7 +280,7 @@
                 z-index: 1;
             }
             &-body {
-                background-color: #59bded;
+                background-color: $icon-color;
                 border-radius: 2px;
                 height: 47px;
                 left: 50%;
@@ -265,7 +292,7 @@
                 animation: pulseInfoIns 0.75s infinite alternate;
             }
             &-dot {
-                background-color: #59bded;
+                background-color: $icon-color;
                 border-radius: 50%;
                 bottom: 10px;
                 height: 7px;
@@ -281,7 +308,7 @@
         /* Success Icon */
         &-success {
             border-radius: 50%;
-            border: 4px solid #A5DC86;
+            border: 4px solid $icon-color;
             box-sizing: content-box;
             height: 80px;
             padding: 0;
@@ -315,7 +342,7 @@
             }
             &-placeholder {
                 border-radius: 50%;
-                border: 4px solid rgba(165, 220, 134, 0.25);
+                border: 4px solid $icon-color-alpha;
                 box-sizing: content-box;
                 height: 80px;
                 left: -4px;
@@ -335,7 +362,7 @@
                 z-index: 1;
             }
             &-tip, &-long {
-                background-color: #A5DC86;
+                background-color: $icon-color;
                 border-radius: 2px;
                 height: 5px;
                 position: absolute;
@@ -429,17 +456,17 @@
             opacity: 0.5;
         }
         100% {
-            background-color: #F8BB86;
+            background-color: $icon-color;
             transform: scale(2);
             opacity: 0;
         }
     }
     @keyframes pulseWarningIns {
         0% {
-            background-color: #F8D486;
+            filter: brightness(1.2);
         }
         100% {
-            background-color: #F8BB86;
+            filter: brightness(1);
         }
     }
 
@@ -465,17 +492,17 @@
             opacity: 0.5;
         }
         100% {
-            background-color: #59bded;
+            background-color: $icon-color;
             transform: scale(2);
             opacity: 0;
         }
     }
     @keyframes pulseInfoIns {
         0% {
-            background-color: #59bded;
+            background-color: $icon-color;
         }
         100% {
-            background-color: #59bded;
+            background-color: $icon-color;
         }
     }
 
