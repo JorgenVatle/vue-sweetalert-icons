@@ -23,7 +23,8 @@ If you're using Nuxt, you might need additional steps [(read more)](#usage-with-
 <template>
     <!-- Icon can be one of: "success", "warning", "info", "error" and "loading" -->
     <sweetalert-icon icon="success" />
-    <!-- Color can be customized -->
+
+    <!-- Optionally, you can customize colors for all icons! 🎨 -->
     <sweetalert-icon icon="warning" color="#6a737d"/>
 </template>
 ```
