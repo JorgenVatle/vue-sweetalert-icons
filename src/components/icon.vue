@@ -35,6 +35,7 @@
 
 <script>
     import validateColor from "validate-color";
+    import convertColor from "color";
     const availableIcons = ['success', 'warning', 'error', 'info', 'loading'];
     const iconColors = {
         success: "#A5DC86",
@@ -63,10 +64,12 @@
 
         computed: {
             cssVars() {
-                return {
-                    "--icon-color": validateColor(this.color) 
+                const outputColor = validateColor(this.color) 
                         ? this.color 
-                        : iconColors[this.icon]
+                        : iconColors[this.icon];
+                return {
+                    "--icon-color": outputColor,
+                    "--icon-color-alpha": convertColor(outputColor).alpha(0.25)
                 };
             }
         },
@@ -88,6 +91,7 @@
     */
 
     $icon-color: var(--icon-color);
+    $icon-color-alpha: var(--icon-color-alpha);
     body {
         // Background used as an overlay for certain animations.
         // Should be set to the same colour as the background of your containing element.
@@ -104,7 +108,7 @@
         /* Loading Icon */
         &-loading {
             border-radius: 50%;
-            border: 4px solid rgba($icon-color, 0.22);
+            border: 4px solid $icon-color-alpha;
             box-sizing: content-box;
             height: 80px;
             left: -4px;
@@ -157,7 +161,7 @@
             }
             &-placeholder {
                 border-radius: 50%;
-                border: 4px solid rgba($icon-color, .2);
+                border: 4px solid $icon-color-alpha;
                 box-sizing: content-box;
                 height: 80px;
                 left: -4px;
@@ -338,7 +342,7 @@
             }
             &-placeholder {
                 border-radius: 50%;
-                border: 4px solid rgba($icon-color, 0.25);
+                border: 4px solid $icon-color-alpha;
                 box-sizing: content-box;
                 height: 80px;
                 left: -4px;
