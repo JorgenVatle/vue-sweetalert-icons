@@ -6,8 +6,13 @@ A clean and simple Vue wrapper for [SweetAlert](https://sweetalert.js.org/)'s fa
 </p>
 
 ## Install
+### Vue v3
 ```bash
-npm install --save vue-sweetalert-icons
+npm install vue-sweetalert-icons
+```
+### Vue v2
+```bash
+npm install vue-sweetalert-icons@4
 ```
 
 ## Import
