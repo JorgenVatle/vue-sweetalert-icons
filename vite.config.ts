@@ -10,7 +10,7 @@ export default defineConfig({
         lib: {
             entry: resolve(__dirname, './src/entry.js'),
             name: 'VueSweetalertIcons',
-            fileName: 'vue-sweetalert-icons',
+            fileName: 'sweetalert-icons',
         },
         outDir: 'dist',
         rollupOptions: {
