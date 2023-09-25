@@ -13,6 +13,7 @@
         "src/**"
     ],
     "scripts": {
+        "build": "vite build",
         "preversion": "npm run build",
         "postpublish": "git push && git push --tags",
         "prepareexample": "npm link && cd example && npm i && npm link vue-sweetalert-icons && npm run generate"
