@@ -43,6 +43,7 @@
     },
     "devDependencies": {
         "@types/node": "^18.18.0",
+        "@vitejs/plugin-vue": "^4.3.4",
         "typescript": "^5.2.2",
         "vite": "^4.4.9"
     }
