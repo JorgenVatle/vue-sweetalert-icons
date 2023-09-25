@@ -6,13 +6,21 @@ A clean and simple Vue wrapper for [SweetAlert](https://sweetalert.js.org/)'s fa
 </p>
 
 ## Install
+### Vue v3
 ```bash
-npm install --save vue-sweetalert-icons
+npm install vue-sweetalert-icons
+```
+### Vue v2
+```bash
+npm install vue-sweetalert-icons@4
 ```
 
 ## Import
 ```js
 import SweetAlertIcons from 'vue-sweetalert-icons';
+
+// For Vue v3, you also need to import styles explicitly:
+import 'vue-sweetalert-icons/dist/style.css'
 
 Vue.use(SweetAlertIcons);
 ```
@@ -39,16 +47,19 @@ component/instance instead:
 
 <script>
     import SweetalertIcon from 'vue-sweetalert-icons';
-
+    
+    // For Vue v3, make sure you've imported the styles somewhere in your app as well.
+    // import 'vue-sweetalert-icons/dist/style.css'
+    
     export default {
         components: { SweetalertIcon },
     }
 </script>
 ```
 
-## Usage with Nuxt
+## Usage with Nuxt 2
 Due to an issue with the way styles are injected into Nuxt, please wrap `<sweetalert-icon />` around 
-[`<no-ssr>`](https://nuxtjs.org/api/components-no-ssr/) tags.
+[`<no-ssr>`](https://nuxtjs.org/api/components-no-ssr/) tags. If you're using Nuxt 3, this step is no longer necessary.
 ```vue
 <no-ssr>
     <sweetalert-icon icon="info" />
