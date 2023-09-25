@@ -19,6 +19,9 @@ npm install vue-sweetalert-icons@4
 ```js
 import SweetAlertIcons from 'vue-sweetalert-icons';
 
+// For Vue v3, you also need to import styles explicitly:
+import 'vue-sweetalert-icons/dist/style.css'
+
 Vue.use(SweetAlertIcons);
 ```
 If you're using Nuxt, you might need additional steps [(read more)](#usage-with-nuxt)
